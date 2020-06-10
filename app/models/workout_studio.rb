@@ -1,0 +1,2 @@
+class WorkoutStudio < ApplicationRecord
+end
