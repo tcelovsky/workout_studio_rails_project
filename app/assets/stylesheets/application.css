@@ -119,6 +119,10 @@
     text-transform: none;
   }
 
+  .form {
+    margin-bottom: 15px;
+  }
+
   .theme-dropdown .dropdown-menu {
     position: static;
     display: block;
