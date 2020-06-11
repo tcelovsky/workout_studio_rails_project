@@ -49,10 +49,17 @@
     right: 0;
     left: 0;
     z-index: 1030;
+    float: left;
   }
 
   .navbar-header {
-    float: left;
+    float: right;
+    margin-right: 15px;
+    color: #9d9d9d;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 30px;
   }
 
   .navbar-brand {
