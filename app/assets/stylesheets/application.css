@@ -13,11 +13,105 @@
  *= require_tree .
  *= require_self
  */
+
+ html {
+  font-size: 10px;
+  font-family: sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  }
+
  body {
     padding-top: 70px;
     padding-bottom: 30px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333333;
+    background-color: #fff;
   }
-  
+
+  a {
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  .navbar {
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    background-color: #222;
+    border-color: #090909;
+    top: 0;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+
+  .navbar-header {
+    float: left;
+  }
+
+  .navbar-brand {
+    margin-left: -15px;
+    color: #9d9d9d;
+    float: left;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 30px;
+  }
+
+  .navbar-toggle {
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #fff;
+    border-color: #333;
+    
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+
+  button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    overflow: visible;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
+    align-items: flex-start;
+  }
+
+  button, select {
+    text-transform: none;
+  }
+
   .theme-dropdown .dropdown-menu {
     position: static;
     display: block;
@@ -45,4 +139,15 @@
   .info {
     height: 290px;
     text-align: left;
+  }
+
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  div {
+    display: block;
   }
