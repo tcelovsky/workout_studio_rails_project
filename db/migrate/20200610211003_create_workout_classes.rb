@@ -5,7 +5,6 @@ class CreateWorkoutClasses < ActiveRecord::Migration[6.0]
       t.string :date
       t.string :time
       t.integer :instructor_id
-      t.integer :workout_studio_id
       t.integer :student_id
 
       t.timestamps

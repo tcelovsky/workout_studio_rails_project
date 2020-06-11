@@ -21,7 +21,10 @@ class WorkoutClassesController < ApplicationController
   
     # POST /workout_classes
     def create
-      @workout_class = WorkoutClass.create(workout_class_params)
+      @workout_class = WorkoutClass.new(workout_class_params)
+      byebug
+      @workout_class.save
+      redirect_to workout_class_path(@workout_class)
 
     end
   

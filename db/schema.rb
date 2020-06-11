@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2020_06_10_211024) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.integer "workout_studio_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -25,7 +24,6 @@ ActiveRecord::Schema.define(version: 2020_06_10_211024) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.integer "workout_studio_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,15 +33,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_211024) do
     t.string "date"
     t.string "time"
     t.integer "instructor_id"
-    t.integer "workout_studio_id"
     t.integer "student_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "workout_studios", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
