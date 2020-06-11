@@ -1,0 +1,13 @@
+<h2>Register</h2>
+<%= form_for(@student)  do |f| %>
+    <div class="form"><%= f.label :name %></div>
+    <div class="form"><%= f.text_field :name %></div>
+    <div class="form"><%= f.label :email %></div>
+    <div class="form"><%= f.text_field :email %></div>
+    <div class="form"><%= f.label :password %></div>
+    <div class="form"><%= f.text_field :password %></div>
+    <div class="form"><%= f.label :password_confirmation %></div>
+    <div class="form"><%= f.text_field :password_confirmation %></div>
+  
+    <%= f.submit "Register"%>
+<% end %>
