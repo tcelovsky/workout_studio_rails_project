@@ -16,10 +16,10 @@ DATA = {
   :workout_class_keys =>
    ["name", "date", "time", "instructor_id", "student_id"],
   :workout_classes => [
-    ["HIIT", "7/1/2020", "7:00", 1, 1],
-    ["Cardio", "7/1/2020", "12:00", 1, 2],
-    ["Upper Body", "7/5/2020", "8:00", 2, 3],
-    ["Abs", "7/6/2020", "13:00", 2, 2]
+    ["HIIT", "7/1/2020", "7:00AM", 1, 1],
+    ["Cardio", "7/1/2020", "12:00PM", 1, 2],
+    ["Upper Body", "7/5/2020", "8:00AM", 2, 3],
+    ["Abs", "7/6/2020", "13:00PM", 2, 2]
   ],
   :student_keys =>
    ["name", "email", "password_digest"],
