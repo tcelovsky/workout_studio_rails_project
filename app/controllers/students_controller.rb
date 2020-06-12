@@ -9,6 +9,7 @@ class StudentsController < ApplicationController
         @student = Student.new(student_params)
         if @student.valid?
             @student.save
+            session[:id] = params[:id]
             redirect_to student_path(@student)
         else render :new
         end

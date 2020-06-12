@@ -1,5 +1,25 @@
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <input name=name>
-  <input type=submit value='login'>
-<% end %>
+<h2>Log in</h2>
+<%= form_for(@student) do |f| %>
+    <% if @student.errors.any? %>
+        <div id="error_explanation">
+            <h2>There were some errors:</h2>
+                <ul>
+                <% @student.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+                </ul>
+        </div>
+    <% end %>
 
+    <div class="form"><%= f.label :email %></div>
+    <div class="form<%= ' form_with_errors' if @student.errors[:email].any? %>">
+        <%= f.text_field :email %>
+    </div>
+
+    <div class="form"><%= f.label :password %></div>
+    <div class="form<%= ' form_with_errors' if @student.errors[:password].any? %>">
+        <%= f.text_field :password %>
+    </div>
+  
+    <%= f.submit "Log in"%>
+<% end %>
