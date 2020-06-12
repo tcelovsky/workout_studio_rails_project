@@ -1,6 +1,6 @@
 <h2>Upcoming Classes</h2>
 <p>
     <% @workout_classes.each do |c| %>
-        <%= c.name %>
+        <%= c.name %> with <%= c.instructor.name %> on <%= c.date %> at <%= c.time %><br>
     <% end %>
 </p>
