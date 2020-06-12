@@ -128,6 +128,12 @@
     color: rgb(202, 24, 24);
   }
 
+  .field_with_errors {
+    padding: 2px;
+    background-color: rgb(202, 24, 24);
+    display: table;
+  }
+
   .list {
     margin-bottom: 15px;
     list-style-type: none;
