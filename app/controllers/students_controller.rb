@@ -15,6 +15,18 @@ class StudentsController < ApplicationController
         end
     end
 
+    def show
+    end
+
+    def edit
+    end
+    
+    def update
+    end
+
+    def destroy
+    end
+
     private
     def student_params
         params.require(:student).permit(:name, :email, :password, :password_confirmation)

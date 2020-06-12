@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
-  # get '/welcome' => 'sessions#welcome'
+  get '/welcome' => 'students#show'
   # get '/show' => 'secrets#show'
 end

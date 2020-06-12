@@ -1,5 +1,5 @@
 <h2>Log in</h2>
-<%= form_for(@student) do |f| %>
+<%= form_for @student, url: '/login', method: :post do |f| %>
     <% if @student.errors.any? %>
         <div id="error_explanation">
             <h2>There were some errors:</h2>
