@@ -123,6 +123,17 @@
     margin-bottom: 15px;
   }
 
+  #error_explanation {
+    margin-bottom: 15px;
+    color: rgb(202, 24, 24);
+  }
+
+  .list {
+    margin-bottom: 15px;
+    list-style-type: none;
+    margin-left: -40px;
+  }
+
   .theme-dropdown .dropdown-menu {
     position: static;
     display: block;

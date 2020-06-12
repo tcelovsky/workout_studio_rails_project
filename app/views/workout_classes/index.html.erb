@@ -1,6 +1,11 @@
 <h2>Upcoming Classes</h2>
-<p>
+<ul>
     <% @workout_classes.each do |c| %>
-        <%= c.name %> with <%= c.instructor.name %> on <%= c.date %> at <%= c.time %><br>
+        <li class="list">
+        <%= c.name %> with <%= c.instructor.name %> on <%= c.date %> at <%= c.time %>
+        </li>
     <% end %>
-</p>
+</ul>
+
+  <%# <li><%= link_to display_artist(song), artist_songs_path(song.artist) %>  
+  <%# <%= link_to song.title, song_path(song)</li> %> 
