@@ -1,4 +1,8 @@
 <h2>Log in</h2>
+<% if flash[:message] %>
+  <div id="error_explanation"><%= flash[:message] %></div>
+<% end %>
+
 <%= form_for :student do |f| %>
   <div class="form"><%= f.label :email %></div>
   <div class="form"><%= f.email_field :email %></div>

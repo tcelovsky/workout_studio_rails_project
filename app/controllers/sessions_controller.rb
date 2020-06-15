@@ -4,11 +4,12 @@ class SessionsController < ApplicationController
 
     def create
         @student = Student.find_by(email: params[:student][:email])
-        if params[:student][:email].present? && params[:student][:password].present?
-            @student.authenticate(params[:student][:password])
+        if @student && @student.authenticate(params[:student][:password])
             session[:student_id] = @student.id  
             redirect_to student_path(@student)
-        else redirect_to login_path
+        else 
+            flash[:message] = "Invalid email or password."
+            redirect_to login_path
         end
     end
     
