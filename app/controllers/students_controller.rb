@@ -8,7 +8,7 @@ class StudentsController < ApplicationController
     def create
         @student = Student.new(student_params)
         if @student.save
-            session[:student_id] = params[:id]
+            session[:student_id] = @student.id
             redirect_to student_path(@student)
         else render :new
         end
