@@ -7,9 +7,8 @@ class StudentsController < ApplicationController
 
     def create
         @student = Student.new(student_params)
-        if @student.valid?
-            @student.save
-            session[:id] = params[:id]
+        if @student.save
+            session[:student_id] = params[:id]
             redirect_to student_path(@student)
         else render :new
         end
@@ -33,7 +32,7 @@ class StudentsController < ApplicationController
     end
 
     def set_student
-        @student = Student.find(params[:id])
+        @student = Student.find_by(params[:id])
     end
 
 end

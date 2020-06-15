@@ -1,25 +1,10 @@
 <h2>Log in</h2>
-<%= form_for @student, url: '/login', method: :post do |f| %>
-    <% if @student.errors.any? %>
-        <div id="error_explanation">
-            <h2>There were some errors:</h2>
-                <ul>
-                <% @student.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-                </ul>
-        </div>
-    <% end %>
+<%= form_for :student do |f| %>
+  <div class="form"><%= f.label :email %></div>
+  <div class="form"><%= f.text_field :email %></div>
 
-    <div class="form"><%= f.label :email %></div>
-    <div class="form<%= ' form_with_errors' if @student.errors[:email].any? %>">
-        <%= f.text_field :email %>
-    </div>
-
-    <div class="form"><%= f.label :password %></div>
-    <div class="form<%= ' form_with_errors' if @student.errors[:password].any? %>">
-        <%= f.text_field :password %>
-    </div>
+  <div class="form"><%= f.label :password %></div>
+  <div class="form"><%= f.text_field :password %></div>
   
-    <%= f.submit "Log in"%>
+  <%= f.submit "Log in"%>
 <% end %>

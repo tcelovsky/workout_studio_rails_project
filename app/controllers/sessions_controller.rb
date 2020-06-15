@@ -1,22 +1,18 @@
 class SessionsController < ApplicationController
-    # GET /login
     def new
-        @student = Student.find_by(params[:email])
     end
 
-    # POST /login
     def create
-        @student = Student.find_by(params[:email])
-        if params[:email].present? && params[:password].present?
-            @student.authenticate
-            session[:id] = @student.id  
+        @student = Student.find_by(email: params[:student][:email])
+        if params[:student][:email].present? && params[:student][:password].present?
+            @student.authenticate(params[:student][:password])
+            session[:student_id] = @student.id  
             redirect_to student_path(@student)
-        else redirect_to '/login'
+        else redirect_to login_path
         end
     end
     
-    # POST /logout
     def destroy
-        session.delete :id
+        session.delete :student_id
     end
 end
