@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-    before_action :set_student, only: [:show, :edit, :update, :destroy]
+    before_action :set_student, only: [:show, :edit, :update]
 
     def new
         @student = Student.new
@@ -26,9 +26,6 @@ class StudentsController < ApplicationController
             redirect_to student_path(@student)
         else render :new
         end
-    end
-
-    def destroy
     end
 
     private
