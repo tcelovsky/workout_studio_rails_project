@@ -6,8 +6,5 @@ Rails.application.routes.draw do
   root 'workout_classes#index'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
-
-  # get '/welcome' => 'students#show'
-  # get '/show' => 'secrets#show'
+  delete '/logout' => 'sessions#destroy'
 end

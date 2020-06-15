@@ -17,17 +17,17 @@
 
     <div class="form"><%= f.label :email %></div>
     <div class="form<%= ' form_with_errors' if @student.errors[:email].any? %>">
-        <%= f.text_field :email %>
+        <%= f.email_field :email %>
     </div>
 
     <div class="form"><%= f.label :password %></div>
     <div class="form<%= ' form_with_errors' if @student.errors[:password].any? %>">
-        <%= f.text_field :password %>
+        <%= f.password_field :password %>
     </div>
 
     <div class="form"><%= f.label :password_confirmation %></div>
     <div class="form<%= ' form_with_errors' if @student.errors[:password_confirmation].any? %>">
-        <%= f.text_field :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
     </div>
   
     <%= f.submit "Register"%>
