@@ -21,6 +21,11 @@ class StudentsController < ApplicationController
     end
     
     def update
+        if @student.save
+            session[:student_id] = @student.id
+            redirect_to student_path(@student)
+        else render :new
+        end
     end
 
     def destroy
