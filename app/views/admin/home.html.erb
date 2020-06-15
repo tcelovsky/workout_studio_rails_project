@@ -1,0 +1,8 @@
+<h2>Workout Classes</h2>
+<ul>
+    <% @workout_classes.each do |c| %>
+        <li class="list">
+        <%= c.name %> with <%= c.instructor.name %> on <%= c.date %> at <%= c.time %>
+        </li>
+    <% end %>
+</ul>
