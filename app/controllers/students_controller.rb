@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
     end
 
     def set_student
-        @student = Student.find_by(params[:id])
+        @student = Student.find_by(id: params[:id])
     end
 
 end
