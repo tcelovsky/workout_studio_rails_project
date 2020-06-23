@@ -40,7 +40,7 @@ class WorkoutClassesController < ApplicationController
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_workout_class
-        @workout_class = WorkoutClass.find(params[:id])
+        @workout_class = WorkoutClass.find_by(id: params[:id])
       end
   
       # White list params.
