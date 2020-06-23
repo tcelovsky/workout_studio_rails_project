@@ -1,2 +1,3 @@
 <h2><%= @workout_class.name %></h2>
-<p><%= @workout_class.date %> at <%= @workout_class.time %> with <%= link_to @workout_class.instructor.name, instructor_path(@workout_class.instructor) %> </p>
+<p><%= @workout_class.date %> at <%= @workout_class.time %> with <%= link_to @workout_class.instructor.name, instructor_path(@workout_class.instructor) %></p>
+<p><%= @workout_class.description %></p>

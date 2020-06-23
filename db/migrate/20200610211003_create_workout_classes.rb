@@ -4,6 +4,7 @@ class CreateWorkoutClasses < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :date
       t.string :time
+      t.text :description
       t.integer :instructor_id
       t.integer :student_id
 
