@@ -2,7 +2,7 @@
 <ul>
     <% @instructors.each do |i| %>
         <li class="list">
-        <%= i.name %>
+        <%= link_to i.name, instructor_path(i)  %>
         </li>
     <% end %>
 </ul>

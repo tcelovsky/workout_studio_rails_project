@@ -2,7 +2,7 @@
 <ul>
     <% @workout_classes.each do |c| %>
         <li class="list">
-        <%= c.name %> with <%= c.instructor.name %> on <%= c.date %> at <%= c.time %>
+        <%= link_to c.name, workout_class_path(c) %> with <%= link_to c.instructor.name, instructor_path(c.instructor) %> on <%= c.date %> at <%= c.time %>
         </li>
     <% end %>
 </ul>
