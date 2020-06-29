@@ -1,0 +1,8 @@
+<h2><%= @instructor.name %></h2>
+<ul>
+    <% @instructor.workout_classes.each do |c| %>
+        <li class="list">
+        <%= link_to c.name, workout_class_path(c) %> on <%= c.date %> at <%= c.time %>
+        </li>
+    <% end %>
+</ul>
