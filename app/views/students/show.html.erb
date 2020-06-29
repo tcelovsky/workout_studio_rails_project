@@ -1,1 +1,9 @@
 <h2>Welcome <%= @student.name %>!</h2>
+<h3>Your upcoming classes:</h3>
+<ul>
+    <% @student.workout_classes.each do |c| %>
+        <li class="list">
+        <%= c.name %> 
+        </li>
+    <% end %>
+</ul>
