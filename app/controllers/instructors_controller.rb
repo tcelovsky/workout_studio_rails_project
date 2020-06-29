@@ -1,8 +1,8 @@
 class InstructorsController < ApplicationController
     before_action :set_instructor, only: [:show, :edit, :update, :destroy]
 
-    def index
-        @instructors = Instructor.all
+    def new
+        @instructor = Instructor.new
     end
 
     def create
@@ -11,6 +11,10 @@ class InstructorsController < ApplicationController
             redirect_to instructor_path(@instructor)
         else render :new
         end
+    end
+
+    def index
+        @instructors = Instructor.all
     end
 
     def show

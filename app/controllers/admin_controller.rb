@@ -8,4 +8,7 @@ class AdminController < ApplicationController
     def instructors
         @instructors = Instructor.all
     end
+
+    def admin
+    end
 end
