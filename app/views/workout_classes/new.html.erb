@@ -1,15 +1,2 @@
 <h2>Add a Workout Class</h2>
-<%= form_for(@workout_class)  do |f| %>
-    <div class="form"><%= f.label :name %></div>
-    <div class="form"><%= f.text_field :name %></div>
-    <div class="form"><%= f.label :date %></div>
-    <div class="form"><%= f.text_field :date %></div>
-    <div class="form"><%= f.label :time %></div>
-    <div class="form"><%= f.text_field :time %></div>
-    <div class="form"><%= f.label :instructor %></div>
-    <div class="form"><%= f.text_field :instructor %></div>
-    <div class="form"><%= f.label :description %></div>
-    <div class="form"><%= f.text_area :description %></div>
-  
-    <%= f.submit "Create Workout Class"%>
-<% end %>
+<%= render 'form' %>
