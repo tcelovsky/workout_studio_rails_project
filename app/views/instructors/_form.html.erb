@@ -1,0 +1,12 @@
+<%= form_for(@instructor) do |f| %>
+    <div class="form"><%= f.label :name %></div>
+    <div class="form"><%= f.text_field :name %></div>
+    <div class="form"><%= f.label :email %></div>
+    <div class="form"><%= f.text_field :email %></div>
+    <div class="form"><%= f.label :password %></div>
+    <div class="form"><%= f.text_field :password %></div>
+    <div class="form"><%= f.label :password_confirmation %></div>
+    <div class="form"><%= f.text_field :password %></div>
+  
+    <%= f.submit "Submit"%>
+<% end %>

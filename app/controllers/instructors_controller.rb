@@ -5,6 +5,27 @@ class InstructorsController < ApplicationController
         @instructors = Instructor.all
     end
 
+    def create
+        @instructor = Instructor.new(instructor_params)
+        if @instructor.save
+            redirect_to instructor_path(@instructor)
+        else render :new
+        end
+    end
+
+    def show
+    end
+
+    def edit
+    end
+    
+    def update
+        if @instructor.save
+            redirect_to instructor_path(@instructor)
+        else render :new
+        end
+    end
+
     private
     def set_instructor
         @instructor = Instructor.find_by(id: params[:id])
