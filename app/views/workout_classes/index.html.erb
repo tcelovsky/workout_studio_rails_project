@@ -3,9 +3,7 @@
     <% @workout_classes.each do |c| %>
         <li class="list">
         <%= link_to c.name, workout_class_path(c) %> with <%= link_to c.instructor.name, instructor_path(c.instructor) %> on <%= c.date %> at <%= c.time %>
+        <a><%= link_to 'Sign Up', signup_path(c) %></a>
         </li>
     <% end %>
 </ul>
-
-  <%# <li><%= link_to display_artist(song), artist_songs_path(song.artist) %>  
-  <%# <%= link_to song.title, song_path(song)</li> %> 

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   get 'admin/home', to: 'admin#home'
   get 'admin/instructors', to: 'admin#instructors'
+  get '/workout_classes/:id/signup', to: 'workout_classes#signup', as: 'signup'
 end
