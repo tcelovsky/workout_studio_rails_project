@@ -3,7 +3,7 @@
 <ul>
     <% @student.workout_classes.each do |c| %>
         <li class="list">
-        <%= c.name %> 
+        <%= link_to c.name, workout_class_path(c) %> <%= c.date %> at <%= c.time %> with <%= link_to c.instructor.name, instructor_path(c.instructor) %>
         </li>
     <% end %>
 </ul>
