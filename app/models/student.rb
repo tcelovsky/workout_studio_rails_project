@@ -1,7 +1,6 @@
 class Student < ApplicationRecord
     has_many :workout_classes
     has_many :instructors, through: :workout_classes
-    belongs_to :workout_class
     has_secure_password
 
     # validates :name, length: { minimum: 2 }

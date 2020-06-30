@@ -41,7 +41,8 @@ class WorkoutClassesController < ApplicationController
     def signup
       if session[:student_id]
       @workout_class.student_id = session[:student_id]
-      redirect_to student_path(@workout_class.student_id)
+      @workout_class.save
+      redirect_to student_path(session[:student_id])
       else 
         flash[:message] = "Please log in."
         redirect_to login_path
