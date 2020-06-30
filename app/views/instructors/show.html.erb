@@ -1,9 +1,34 @@
 <h2><%= @instructor.name %></h2>
 <p><%= @instructor.bio %></p>
-<ul>
-    <% @instructor.workout_classes.each do |c| %>
-        <li class="list">
-        <%= link_to c.name, workout_class_path(c) %> on <%= c.date %> at <%= c.time %>
-        </li>
-    <% end %>
-</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="4"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <strong>Class Name</strong>
+            </td>
+            <td>
+                <strong>Date</strong>
+            </td>
+            <td>
+                <strong>Time</strong>
+            </td>
+            <td>
+                <strong>Join Us!</strong>
+            </td>
+        </tr>
+        <% @instructor.workout_classes.each do |c| %>
+        <tr>
+            <td><%= link_to c.name, workout_class_path(c) %></td>
+            <td><%= c.date %></td>
+            <td><%= c.time %></td>
+            <td><button type="submit"><%= link_to 'Sign Up', signup_path(c) %></button></td>
+
+        </tr>
+        <% end %>
+    </tbody>
+</table>
