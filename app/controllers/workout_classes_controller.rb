@@ -37,6 +37,7 @@ class WorkoutClassesController < ApplicationController
 
     end
 
+    # GET /workout_classes/1/signup
     def signup
       if session[:student_id]
       @workout_class.student_id = session[:student_id]
