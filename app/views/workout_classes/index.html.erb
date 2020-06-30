@@ -1,9 +1,36 @@
 <h2>Upcoming Classes</h2>
-<ul>
-    <% @workout_classes.each do |c| %>
-        <li class="list">
-        <%= link_to c.name, workout_class_path(c) %> with <%= link_to c.instructor.name, instructor_path(c.instructor) %> on <%= c.date %> at <%= c.time %>
-        <a><%= link_to 'Sign Up', signup_path(c) %></a>
-        </li>
-    <% end %>
-</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="5"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <strong>Name</strong>
+            </td>
+            <td>
+                <strong>Instructor</strong>
+            </td>
+            <td>
+                <strong>Date</strong>
+            </td>
+            <td>
+                <strong>Time</strong>
+            </td>
+            <td>
+                <strong>Join us!</strong>
+            </td>
+        </tr>
+        <% @workout_classes.each do |c| %>
+        <tr>
+            <td><%= link_to c.name, workout_class_path(c) %></td>
+            <td><%= link_to c.instructor.name, instructor_path(c.instructor) %></td>
+            <td><%= c.date %></td>
+            <td><%= c.time %></td>
+            <td><button type="submit"><%= link_to 'Sign Up', signup_path(c) %></button></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

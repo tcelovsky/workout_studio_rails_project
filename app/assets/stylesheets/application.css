@@ -99,20 +99,17 @@
   }
 
   button, html input[type="button"], input[type="reset"], input[type="submit"] {
-    -webkit-appearance: button;
+    color: black;
+    user-select: none;
     cursor: pointer;
-    overflow: visible;
-    color: inherit;
-    font: inherit;
-    margin: 0;
-    -webkit-writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-indent: 0px;
-    text-shadow: none;
-    text-align: center;
-    align-items: flex-start;
+    display: inline-block;
+    padding: 5px 5px;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: none;
+    text-align: center;
+    transition: all 0.2s;
   }
 
   button, select {
@@ -178,4 +175,30 @@
 
   div {
     display: block;
+  }
+
+  table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: table;
+    border-color: grey;
+  }
+
+  .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+
+  tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
   }
