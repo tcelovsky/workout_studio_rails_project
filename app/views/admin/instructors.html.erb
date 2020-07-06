@@ -1,8 +1,32 @@
 <h2>Instructors</h2>
-<ul>
-    <% @instructors.each do |i| %>
-        <li class="list">
-        <%= link_to i.name, instructor_path(i)  %>
-        </li>
-    <% end %>
-</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <strong>Instructor Name</strong>
+            </td>
+            <td>
+                <strong>Edit</strong>
+            </td>
+            <td>
+                <strong>Delete</strong>
+            </td>
+        </tr>
+        <% @instructors.each do |i| %>
+        <tr>
+            <td><%= link_to i.name, instructor_path(i)  %></td>
+            <td>
+                <button type="submit"><%= link_to 'Edit', edit_instructor_path(i) %></button>
+            </td>
+            <td>
+                <%= button_to "Delete", instructor_path(i), method: :delete %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
