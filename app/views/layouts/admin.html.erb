@@ -15,7 +15,15 @@
         <div class="container">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           </button>
-        <a class="navbar-brand" href="<%= admin_home_path %>">Workout Classes</a>
+        <a class="navbar-brand" <%= link_to 'Register', new_instructor_path if !session[:instructor_id] %> ></a>
+        <% if session[:instructor_id] %>
+          <a class="navbar-brand" <%= link_to 'Update my information', edit_instructor_path(session[:instructor_id]) %> ></a>
+        <% else %>
+          <a class="navbar-brand" <%= link_to 'Log in', login_path %> ></a>
+        <% end %>
+        <a class="navbar-brand" <%= link_to 'Log out', logout_path, method: :delete if session[:instructor_id] %> ></a>
+        </div>
+        <a class="navbar-brand" href="<%= admin_workout_classes_path %>">Workout Classes</a>
         <a class="navbar-brand" href="<%= admin_instructors_path %>">Instructors</a>
         </div>
     </div>

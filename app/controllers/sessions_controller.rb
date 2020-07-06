@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
-    def new
+    def new_student
+    end
+
+    def new_instructor
     end
 
     def create
