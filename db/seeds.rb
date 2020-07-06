@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 instructors = Instructor.create!([
-  {name: "Alice Park", email: "alice@sweat.com", password_digest: "alicepassword", bio: "Alice has been a trainer for two years, she is available for one-on-one sessions when she is not teachign group classes."},
+  {name: "Alice Park", email: "alice@sweat.com", password_digest: "alicepassword", bio: "Alice has been a trainer for two years, she is available for one-on-one sessions when she is not teaching group classes."},
   {name: "Sam Newmann", email: "sam@sweat.com", password_digest: "sampassword", bio: "Sam has been at Sweat for 5 years. He loves sharing his passion for fitness with our students."}
 ])
 

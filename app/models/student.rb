@@ -9,4 +9,7 @@ class Student < ApplicationRecord
     # validates :password, confirmation: true
     # validates :password_confirmation, presence: true
 
+    def current_student
+        self.id = sessions[:student_id]
+    end
 end

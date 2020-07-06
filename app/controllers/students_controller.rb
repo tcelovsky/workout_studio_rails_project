@@ -34,7 +34,7 @@ class StudentsController < ApplicationController
     end
 
     def set_student
-        @student = Student.find_by(id: params[:id])
+        @student = Student.find_by(id: session[:student_id])
     end
 
 end

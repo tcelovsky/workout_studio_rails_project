@@ -29,6 +29,7 @@ class WorkoutClassesController < ApplicationController
   
     # PATCH/PUT /workout_classes/1
     def update
+      redirect_to admin_home_path(@workout_class)
     end
   
     # DELETE /workout_classes/1
