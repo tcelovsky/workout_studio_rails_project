@@ -1,14 +1,2 @@
-<h2>Log in</h2>
-<% if flash[:message] %>
-  <div id="error_explanation"><%= flash[:message] %></div>
-<% end %>
-
-<%= form_for :instructor do |f| %>
-  <div class="form"><%= f.label :email %></div>
-  <div class="form"><%= f.email_field :email %></div>
-
-  <div class="form"><%= f.label :password %></div>
-  <div class="form"><%= f.password_field :password %></div>
-  
-  <%= f.submit "Log in"%>
-<% end %>
+<h2>Sweat Workout Studio Admin</h2>
+<p>Please <%= link_to "Register", new_instructor_path %> or <%= link_to "Log in", admin_login_path %></p>

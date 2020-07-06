@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   resources :workout_classes
   resources :instructors
   root 'workout_classes#index'
-  get '/login' => 'sessions#new'
+  get '/login' => 'sessions#new_student'
   post '/login' => 'sessions#create'
+  get '/admin/login' => 'sessions#new_instructor'
+  post '/admin/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
   get 'admin/home', to: 'admin#home'
   get 'admin/instructors', to: 'admin#instructors'
