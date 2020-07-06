@@ -6,7 +6,12 @@
     <div class="form"><%= f.label :time %></div>
     <div class="form"><%= f.text_field :time %></div>
     <div class="form"><%= f.label :instructor %></div>
-    <div class="form"><%= f.text_field :instructor_name %></div>
+    <div class="form"><%= f.text_field :instructor_name, list: "instructors_autocomplete" %></div>
+        <datalist id="instructors_autocomplete">
+            <% Instructor.all.each do |i| %>
+                <option value="<%= i.name %>">
+            <% end %>
+        </datalist>
     <div class="form"><%= f.label :description %></div>
     <div class="form"><%= f.text_area :description %></div>
   
