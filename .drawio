@@ -1,0 +1,70 @@
+<mxfile host="" modified="2020-07-06T22:19:08.050Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.45.1 Chrome/78.0.3904.130 Electron/7.2.4 Safari/537.36" etag="qFcUycKMbRi28RN_548B" version="13.1.3">
+    <diagram id="6hGFLwfOUW9BJ-s0fimq" name="Workout_Studio_Diagram">
+        <mxGraphModel dx="768" dy="258" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="8" value="Instructor" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="20" width="160" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="+ has_many Workout Classes&#10;+ has_many Students, through Classes&#10;&#10;Name&#10;Email&#10;Password&#10;Bio&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;whiteSpace=wrap;" parent="8" vertex="1">
+                    <mxGeometry y="30" width="160" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Student" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="20" width="160" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="+ has_many Workout Classes&#10;+ has_many Instructors, through Workout Classes&#10;&#10;Name&#10;Email&#10;Password" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;whiteSpace=wrap;" parent="4" vertex="1">
+                    <mxGeometry y="30" width="160" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Workout Class" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="270" width="160" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="+ belongs_to Instructor&#10;+belongs_to Student&#10;&#10;Name             &#10;Instructor       Student_id&#10;Date               Instructor_id&#10;Time&#10;Description" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;whiteSpace=wrap;" parent="6" vertex="1">
+                    <mxGeometry y="30" width="160" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="edgeStyle=elbowEdgeStyle;fontSize=12;html=1;endArrow=ERmany;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;endFill=0;" edge="1" parent="1" source="9" target="7">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="83" y="210" as="sourcePoint"/>
+                        <mxPoint x="210" y="338" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="100" y="280"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="" style="edgeStyle=elbowEdgeStyle;fontSize=12;html=1;endArrow=ERmany;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;endFill=0;" edge="1" parent="1" target="7">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="480" y="200" as="sourcePoint"/>
+                        <mxPoint x="600" y="337.5" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="480" y="280"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="" style="edgeStyle=elbowEdgeStyle;fontSize=12;html=1;endArrow=ERmany;rounded=0;exitX=0.994;exitY=0.207;exitDx=0;exitDy=0;endFill=0;exitPerimeter=0;" edge="1" parent="1" source="9">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="240" y="90" as="sourcePoint"/>
+                        <mxPoint x="400" y="81" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="240" y="170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="through Workout Classes" style="ellipse;whiteSpace=wrap;html=1;align=center;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="60" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="" style="edgeStyle=elbowEdgeStyle;fontSize=12;html=1;endArrow=ERmany;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;endFill=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="5" target="9">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="179.99999999999997" y="161.05" as="sourcePoint"/>
+                        <mxPoint x="250" y="200" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="290" y="180"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="39" value="through Workout Classes" style="ellipse;whiteSpace=wrap;html=1;align=center;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="240.96" y="140" width="100" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
