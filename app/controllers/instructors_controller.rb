@@ -13,10 +13,6 @@ class InstructorsController < ApplicationController
         end
     end
 
-    def index
-        @instructors = Instructor.all
-    end
-
     def show
     end
 
@@ -29,6 +25,11 @@ class InstructorsController < ApplicationController
         else render :new
         end
     end
+
+    def destroy
+        @instructor.destroy
+        redirect_to admin_instructors_path
+      end
 
     private
     def set_instructor
