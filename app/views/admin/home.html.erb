@@ -2,7 +2,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th colspan="5"></th>
+            <th colspan="6"></th>
         </tr>
     </thead>
     <tbody>
@@ -20,7 +20,10 @@
                 <strong>Time</strong>
             </td>
             <td>
-                <strong>Admin</strong>
+                <strong>Edit</strong>
+            </td>
+            <td>
+                <strong>Delete</strong>
             </td>
         </tr>
         <% @workout_classes.each do |c| %>
@@ -29,7 +32,12 @@
             <td><%= link_to c.instructor.name, instructor_path(c.instructor) %></td>
             <td><%= c.date %></td>
             <td><%= c.time %></td>
-            <td><button type="submit"><%= link_to 'Edit', edit_workout_class_path(c) %></button></td>
+            <td>
+                <button type="submit"><%= link_to 'Edit', edit_workout_class_path(c) %></button>
+            </td>
+            <td>
+                <%= button_to "Delete", workout_class_path(c), method: :delete %>
+            </td>
         </tr>
         <% end %>
     </tbody>

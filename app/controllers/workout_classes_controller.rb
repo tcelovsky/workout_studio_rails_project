@@ -34,7 +34,7 @@ class WorkoutClassesController < ApplicationController
     # DELETE /workout_classes/1
     def destroy
       @workout_class.destroy
-
+      redirect_to admin_home_path
     end
 
     # GET /workout_classes/1/signup
