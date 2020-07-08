@@ -1,14 +1,38 @@
 <%= form_for(@instructor) do |f| %>
+    <% if @instructor.errors.any? %>
+        <div id="error_explanation">
+            <h2>There were some errors:</h2>
+                <ul>
+                <% @instructor.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+                </ul>
+        </div>
+    <% end %>
     <div class="form"><%= f.label :name %></div>
-    <div class="form"><%= f.text_field :name %></div>
+    <div class="form<%= ' form_with_errors' if @instructor.errors[:name].any? %>">
+        <%= f.text_field :name %>
+    </div>
+
     <div class="form"><%= f.label :bio %></div>
-    <div class="form"><%= f.text_area :bio %></div>
+    <div class="form<%= ' form_with_errors' if @instructor.errors[:bio].any? %>">
+        <%= f.text_area :bio %>
+    </div>
+
     <div class="form"><%= f.label :email %></div>
-    <div class="form"><%= f.email_field :email %></div>
+    <div class="form<%= ' form_with_errors' if @instructor.errors[:email].any? %>">
+        <%= f.email_field :email %>
+    </div>
+
     <div class="form"><%= f.label :password %></div>
-    <div class="form"><%= f.password_field :password %></div>
+    <div class="form<%= ' form_with_errors' if @instructor.errors[:password].any? %>">
+        <%= f.password_field :password %>
+    </div>
+
     <div class="form"><%= f.label :password_confirmation %></div>
-    <div class="form"><%= f.password_field :password %></div>
+    <div class="form<%= ' form_with_errors' if @instructor.errors[:password_confirmation].any? %>">
+        <%= f.password_field :password_confirmation %>
+    </div>
   
     <%= f.submit "Submit"%>
 <% end %>
