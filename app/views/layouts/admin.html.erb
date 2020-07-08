@@ -17,7 +17,7 @@
           </button>
         <a class="navbar-brand" <%= link_to 'Register', new_instructor_path if !session[:instructor_id] %> ></a>
         <% if session[:instructor_id] %>
-          <a class="navbar-brand" <%= link_to 'Workout Classes', workout_classes_path %> ></a>
+          <a class="navbar-brand" <%= link_to 'Workout Classes', admin_workout_classes_path %> ></a>
           <a class="navbar-brand" <%= link_to 'Instructors', instructors_path %> ></a>
           <a class="navbar-brand" <%= link_to 'Update my information', edit_instructor_path(session[:instructor_id]) %> ></a>
         <% else %>

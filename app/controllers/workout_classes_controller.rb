@@ -1,5 +1,5 @@
 class WorkoutClassesController < ApplicationController
-    before_action :set_workout_class, only: [:show, :edit, :update, :destroy, :signup]
+  before_action :set_workout_class, only: [:show, :edit, :update, :destroy, :signup]
 
     # GET /workout_classes
     def index
@@ -17,6 +17,7 @@ class WorkoutClassesController < ApplicationController
   
     # GET /workout_classes/1/edit
     def edit
+      render :layout => "admin"
     end
   
     # POST /workout_classes
