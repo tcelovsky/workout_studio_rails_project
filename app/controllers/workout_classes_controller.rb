@@ -1,5 +1,5 @@
 class WorkoutClassesController < ApplicationController
-  before_action :set_workout_class, only: [:show, :edit, :update, :destroy, :signup]
+  before_action :set_workout_class, only: [:show, :edit, :update, :destroy, :signup, :drop]
 
     # GET /workout_classes
     def index
@@ -49,6 +49,16 @@ class WorkoutClassesController < ApplicationController
         flash[:message] = "Please log in."
         redirect_to login_path
       end
+    end
+
+    # GET /workout_classes/1/drop
+    def drop
+      @student = Student.find_by(id: session[:student_id])
+      # @workout_class.student_id = nil
+      @student.workout_class_ids.delete(@workout_class.id)
+      @workout_class.save
+      @student.save
+      redirect_to student_path(session[:student_id])
     end
   
     private

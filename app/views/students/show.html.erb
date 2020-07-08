@@ -3,7 +3,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th colspan="4"></th>
+            <th colspan="5"></th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +20,9 @@
             <td>
                 <strong>Time</strong>
             </td>
+            <td>
+                <strong>Drop Class</strong>
+            </td>
         </tr>
         <% @student.workout_classes.each do |c| %>
         <tr>
@@ -27,6 +30,9 @@
             <td><%= link_to c.instructor.name, instructor_path(c.instructor) %></td>
             <td><%= c.date %></td>
             <td><%= c.time %></td>
+            <td>
+                <%= button_to "Drop class", drop_path(c)%>
+            </td>
         </tr>
         <% end %>
     </tbody>
