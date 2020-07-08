@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
     end
 
     def new_instructor
+        render :layout => "admin" 
     end
 
     def create
