@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
                 redirect_to instructor_path(@instructor.id)
             else
                 flash[:message] = "Invalid email or password."
-                redirect_to login_path
+                redirect_to admin_login_path
             end
         end
     end

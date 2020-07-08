@@ -1,4 +1,5 @@
 class InstructorsController < ApplicationController
+    layout "admin"
     before_action :set_instructor, only: [:show, :edit, :update, :destroy]
 
     def new
