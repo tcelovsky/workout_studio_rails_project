@@ -18,7 +18,8 @@
         <a class="navbar-brand" href="<%= root_path %>">Home</a>
         <a class="navbar-brand" <%= link_to 'Register', new_student_path if !session[:student_id] %> ></a>
         <% if session[:student_id] %>
-          <a class="navbar-brand" <%= link_to 'Update my information', edit_student_path(session[:student_id]) %> ></a>
+          <a class="navbar-brand" <%= link_to 'My classes', student_path(session[:student_id]) %>></a>
+          <a class="navbar-brand" <%= link_to 'Update my information', edit_student_path(session[:student_id]) %>></a>
         <% else %>
           <a class="navbar-brand" <%= link_to 'Log in', login_path %> ></a>
         <% end %>
