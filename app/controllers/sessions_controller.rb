@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
             @instructor = Instructor.find_by(email: params[:instructor][:email])
             if @instructor && @instructor.authenticate(params[:instructor][:password])
                 session[:instructor_id] = @instructor.id
-                redirect_to instructor_path(@instructor.id)
+                redirect_to admin_show_instructor_path(@instructor.id)
             else
                 flash[:message] = "Invalid email or password."
                 redirect_to admin_login_path

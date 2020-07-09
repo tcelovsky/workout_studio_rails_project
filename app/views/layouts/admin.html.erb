@@ -19,6 +19,7 @@
         <% if session[:instructor_id] %>
           <a class="navbar-brand" <%= link_to 'Workout Classes', admin_workout_classes_path %> ></a>
           <a class="navbar-brand" <%= link_to 'Instructors', admin_instructors_path %> ></a>
+          <a class="navbar-brand" <%= link_to 'My Classes', admin_show_instructor_path(session[:instructor_id])%> ></a>
           <a class="navbar-brand" <%= link_to 'Update my information', edit_instructor_path(session[:instructor_id]) %> ></a>
         <% else %>
           <a class="navbar-brand" <%= link_to 'Log in', admin_login_path %> ></a>

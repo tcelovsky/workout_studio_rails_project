@@ -18,4 +18,10 @@ class AdminController < ApplicationController
     def show_instructor
         @instructor = Instructor.find_by(id: params[:id])
     end
+
+    private 
+    
+    def logged_in?
+        session[:instructor_id]
+    end
 end
