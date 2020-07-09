@@ -19,12 +19,12 @@
         <%= f.text_area :description %>
     </div>
 
-    <div class="form"><%= f.label :date %></div>
+    <div class="form"><%= f.label "Date (MM/DD/YYYY format)" %></div>
     <div class="form<%= ' form_with_errors' if @workout_class.errors[:date].any? %>">
         <%= f.text_field :date %>
     </div>
 
-    <div class="form"><%= f.label :time %></div>
+    <div class="form"><%= f.label "Time (HH:MM AM/PM format)" %></div>
     <div class="form<%= ' form_with_errors' if @workout_class.errors[:time].any? %>">
         <%= f.text_field :time %>
     </div>
