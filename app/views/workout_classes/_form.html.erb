@@ -1,14 +1,38 @@
 <%= form_for(@workout_class)  do |f| %>
+    <% if @workout_class.errors.any? %>
+        <div id="error_explanation">
+            <h2>There were some errors:</h2>
+                <ul>
+                <% @workout_class.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+                </ul>
+        </div>
+    <% end %>
     <div class="form"><%= f.label :name %></div>
-    <div class="form"><%= f.text_field :name %></div>
+    <div class="form<%= ' form_with_errors' if @workout_class.errors[:name].any? %>">
+        <%= f.text_field :name %>
+    </div>
+
     <div class="form"><%= f.label :description %></div>
-    <div class="form"><%= f.text_area :description %></div>
+    <div class="form<%= ' form_with_errors' if @workout_class.errors[:description].any? %>">
+        <%= f.text_area :description %>
+    </div>
+
     <div class="form"><%= f.label :date %></div>
-    <div class="form"><%= f.text_field :date %></div>
+    <div class="form<%= ' form_with_errors' if @workout_class.errors[:date].any? %>">
+        <%= f.text_field :date %>
+    </div>
+
     <div class="form"><%= f.label :time %></div>
-    <div class="form"><%= f.text_field :time %></div>
+    <div class="form<%= ' form_with_errors' if @workout_class.errors[:time].any? %>">
+        <%= f.text_field :time %>
+    </div>
+
     <div class="form"><%= f.label :instructor %></div>
-    <div class="form"><%= f.text_field :instructor_name, list: "instructors_autocomplete" %></div>
+    <div class="form<%= ' form_with_errors' if @workout_class.errors[:instructor_name].any? %>">
+        <%= f.text_field :instructor_name, list: "instructors_autocomplete" %>
+    </div>
         <datalist id="instructors_autocomplete">
             <% Instructor.all.each do |i| %>
                 <option value="<%= i.name %>">
