@@ -19,7 +19,7 @@
         </tr>
         <% @instructors.each do |i| %>
         <tr>
-            <td><%= link_to i.name, instructor_path(i)  %></td>
+            <td><%= link_to i.name, admin_show_instructor_path(i)  %></td>
             <td>
                 <button type="submit"><%= link_to 'Edit', edit_instructor_path(i) %></button>
             </td>

@@ -14,4 +14,8 @@ class AdminController < ApplicationController
 
     def login
     end
+
+    def show_instructor
+        @instructor = Instructor.find_by(id: params[:id])
+    end
 end

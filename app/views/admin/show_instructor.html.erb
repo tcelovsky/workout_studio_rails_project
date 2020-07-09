@@ -1,0 +1,41 @@
+<h2><%= @instructor.name %></h2>
+<p><%= @instructor.bio %></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="5"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <strong>Class Name</strong>
+            </td>
+            <td>
+                <strong>Date</strong>
+            </td>
+            <td>
+                <strong>Time</strong>
+            </td>
+            <td>
+                <strong>Edit</strong>
+            </td>
+            <td>
+                <strong>Delete</strong>
+            </td>
+        </tr>
+        <% @instructor.workout_classes.each do |c| %>
+        <tr>
+            <td><%= link_to c.name, workout_class_path(c) %></td>
+            <td><%= c.date %></td>
+            <td><%= c.time %></td>
+            <td>
+                <button type="submit"><%= link_to 'Edit', edit_workout_class_path(c) %></button>
+            </td>
+            <td>
+                <%= button_to "Delete", workout_class_path(c), method: :delete %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
