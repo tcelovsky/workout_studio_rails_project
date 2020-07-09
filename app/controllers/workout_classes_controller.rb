@@ -53,11 +53,10 @@ class WorkoutClassesController < ApplicationController
 
     # GET /workout_classes/1/drop
     def drop
-      @student = Student.find_by(id: session[:student_id])
-      # @workout_class.student_id = nil
-      @student.workout_class_ids.delete(@workout_class.id)
+      # @student = Student.find_by(id: session[:student_id])
+      @workout_class.update(student_id: nil)
       @workout_class.save
-      @student.save
+      # @student.save
       redirect_to student_path(session[:student_id])
     end
   

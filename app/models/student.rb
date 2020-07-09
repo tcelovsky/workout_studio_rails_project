@@ -1,4 +1,5 @@
 class Student < ApplicationRecord
+    has_and_belongs_to_many :workout_classes
     has_many :workout_classes
     has_many :instructors, through: :workout_classes
     has_secure_password

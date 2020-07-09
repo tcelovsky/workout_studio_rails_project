@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_30_221332) do
+ActiveRecord::Schema.define(version: 2020_07_09_013733) do
 
   create_table "instructors", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 2020_06_30_221332) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "workout_class_id"
+  end
+
+  create_table "students_workout_classes", id: false, force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "workout_class_id", null: false
+    t.index ["student_id", "workout_class_id"], name: "student_class_index"
   end
 
   create_table "workout_classes", force: :cascade do |t|
