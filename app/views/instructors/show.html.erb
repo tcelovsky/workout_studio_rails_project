@@ -3,7 +3,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th colspan="5"></th>
+            <th colspan="4"></th>
         </tr>
     </thead>
     <tbody>
@@ -18,10 +18,7 @@
                 <strong>Time</strong>
             </td>
             <td>
-                <strong>Edit</strong>
-            </td>
-            <td>
-                <strong>Delete</strong>
+                <strong>Join us!</strong>
             </td>
         </tr>
         <% @instructor.workout_classes.each do |c| %>
@@ -30,10 +27,7 @@
             <td><%= c.date %></td>
             <td><%= c.time %></td>
             <td>
-                <button type="submit"><%= link_to 'Edit', edit_workout_class_path(c) %></button>
-            </td>
-            <td>
-                <%= button_to "Delete", workout_class_path(c), method: :delete %>
+                <button type="submit"><%= link_to 'Sign Up', signup_path(c) %></button>
             </td>
         </tr>
         <% end %>

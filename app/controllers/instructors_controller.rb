@@ -14,11 +14,12 @@ class InstructorsController < ApplicationController
         end
     end
 
-    def index
+    def index 
         @instructors = Instructor.all
     end
 
     def show
+        render :layout => "application"
     end
 
     def edit
