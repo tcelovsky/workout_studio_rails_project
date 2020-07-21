@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :students, only: [:new, :create, :show, :edit, :update]
   resources :workout_classes
   resources :instructors
+  # resources :instructors, only: [:show] do
+  #   resources :workout_classes, only: [:show, :index]
+  # end
   root 'workout_classes#index'
   get '/login' => 'sessions#new_student'
   post '/login' => 'sessions#create'

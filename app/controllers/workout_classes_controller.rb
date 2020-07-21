@@ -69,6 +69,6 @@ class WorkoutClassesController < ApplicationController
   
       # White list params.
       def workout_class_params
-        params.require(:workout_class).permit(:name, :date, :time, :description, :instructor_id, :student_id)
+        params.require(:workout_class).permit(:name, :date, :time, :description, :instructor_id, :student_id, :instructor_name)
       end
 end

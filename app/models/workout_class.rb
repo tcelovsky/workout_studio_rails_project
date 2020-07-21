@@ -10,7 +10,8 @@ class WorkoutClass < ApplicationRecord
     # validates :time, presence: true
 
     def instructor_name=(name)
-	    self.instructor = Instructor.find_or_create_by(name: name)
+        self.instructor = Instructor.find_or_create_by(name: name)
+        # self.instructor.update(name)
 	end
 
 	def instructor_name
