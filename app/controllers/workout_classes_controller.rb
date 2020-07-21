@@ -3,7 +3,11 @@ class WorkoutClassesController < ApplicationController
 
     # GET /workout_classes
     def index
-      @workout_classes = WorkoutClass.all
+      if params[:instructor_id]      
+        @workout_classes = Instructor.find(params[:instructor_id]).workout_classes    
+      else      
+        @workout_classes = WorkoutClass.all
+      end 
     end
   
     # GET /workout_classes/1

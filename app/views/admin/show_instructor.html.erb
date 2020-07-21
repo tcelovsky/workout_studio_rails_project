@@ -30,7 +30,7 @@
             <td><%= c.date %></td>
             <td><%= c.time %></td>
             <td>
-                <button type="submit"><%= link_to 'Edit', edit_workout_class_path(c) %></button>
+                <button type="submit"><%= link_to 'Edit', edit_instructor_workout_class_path(@instructor.id, c.id) %></button>
             </td>
             <td>
                 <%= button_to "Delete", workout_class_path(c), method: :delete %>
