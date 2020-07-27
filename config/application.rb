@@ -15,5 +15,8 @@ module WorkoutStudioRailsProject
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+    # config.force_ssl = true
   end
 end
