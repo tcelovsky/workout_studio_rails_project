@@ -4,10 +4,10 @@ class WorkoutClass < ApplicationRecord
     has_and_belongs_to_many :students
     
 
-    # validates :name, presence: true
-    # validates :instructor, presence: true
-    # validates :date, presence: true
-    # validates :time, presence: true
+    validates :name, presence: true
+    validates :instructor, presence: true
+    validates :date, presence: true
+    validates :time, presence: true
 
     def instructor_name=(name)
         self.instructor = Instructor.find_or_create_by(name: name)
