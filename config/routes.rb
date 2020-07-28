@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new_student'
   post '/login' => 'sessions#create'
   get '/auth/facebook/callback' => 'sessions#create'
+  get '/auth/google_oauth2/callback' => 'sessions#create'
 
   get '/admin/login' => 'sessions#new_instructor'
   post '/admin/login' => 'sessions#create'

@@ -7,13 +7,8 @@ class SessionsController < ApplicationController
     end
 
     def create
+        # byebug
         if params[:student]
-            @user = Student.find_or_create_by(email: auth['email']) do |u|    
-                u.name = auth['info']['name'] 
-                u.email = auth['info']['email']
-                session[:student_id] = @student.id
-                redirect_to student_path(@student.id)
-            end
             @student = Student.find_by(email: params[:student][:email])
             if @student && @student.authenticate(params[:student][:password])
                 session[:student_id] = @student.id  
@@ -22,6 +17,15 @@ class SessionsController < ApplicationController
                 flash[:message] = "Invalid email or password."
                 redirect_to login_path
             end
+        elsif auth[:provider] == "google_oauth2"
+            @student = Student.find_or_create_by(email: auth[:info][:email]) do |s| 
+                s.name = auth[:info][:name]
+                s.email = auth[:info][:email]
+                s.password = auth[:uid]
+                s.password_confirmation = s.password
+            end
+            session[:student_id] = @student.id
+            redirect_to student_path(@student.id)
         elsif params[:instructor]
             @instructor = Instructor.find_by(email: params[:instructor][:email])
             if @instructor && @instructor.authenticate(params[:instructor][:password])
