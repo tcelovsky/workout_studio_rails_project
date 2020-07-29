@@ -41,20 +41,21 @@ class WorkoutClassesController < ApplicationController
     def create
       @workout_class = WorkoutClass.new(workout_class_params)
       if @workout_class.save
-        redirect_to workout_class_path(@workout_class)
+        redirect_to admin_workout_classes_path
       else render new_workout_class_path
       end
     end
   
     # PATCH/PUT /workout_classes/1
     def update
-      redirect_to admin_home_path(@workout_class)
+      @workout_class.update(workout_class_params)
+      redirect_to admin_workout_classes_path
     end
   
     # DELETE /workout_classes/1
     def destroy
       @workout_class.destroy
-      redirect_to admin_home_path
+      redirect_to admin_workout_classes_path
     end
 
     # GET /workout_classes/1/signup

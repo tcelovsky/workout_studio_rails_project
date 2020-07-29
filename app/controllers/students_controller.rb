@@ -21,10 +21,11 @@ class StudentsController < ApplicationController
     end
     
     def update
+        @student.update(student_params)
         if @student.save
             session[:student_id] = @student.id
             redirect_to student_path(@student)
-        else render :new
+        else render :edit
         end
     end
 

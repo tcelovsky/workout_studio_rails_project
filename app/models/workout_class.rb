@@ -3,6 +3,7 @@ class WorkoutClass < ApplicationRecord
     # belongs_to :student
     has_and_belongs_to_many :students
     
+    scope :ordered, -> { order('created_at desc') }
 
     validates :name, presence: true
     validates :instructor, presence: true

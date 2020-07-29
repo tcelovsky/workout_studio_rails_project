@@ -9,7 +9,7 @@ class InstructorsController < ApplicationController
     def create
         @instructor = Instructor.new(instructor_params)
         if @instructor.save
-            redirect_to instructor_path(@instructor)
+            redirect_to admin_show_instructor_path(@instructor)
         else render :new
         end
     end
@@ -26,9 +26,10 @@ class InstructorsController < ApplicationController
     end
     
     def update
+        @instructor.update(instructor_params)
         if @instructor.save
-            redirect_to instructor_path(@instructor)
-        else render :new
+            redirect_to admin_show_instructor_path(@instructor)
+        else render :edit
         end
     end
 
@@ -43,6 +44,6 @@ class InstructorsController < ApplicationController
     end
 
     def instructor_params
-        params.require(:instructor).permit(:name, :email, :password, :password_confirmation, :admin)
+        params.require(:instructor).permit(:name, :email, :password, :password_confirmation, :admin, :bio)
     end
 end
