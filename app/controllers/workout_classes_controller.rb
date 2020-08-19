@@ -17,7 +17,6 @@ class WorkoutClassesController < ApplicationController
     # GET /workout_classes/new
     def new
       if params[:instructor_id]
-        # @instructor = Instructor.find(params[:instructor_id])
         @workout_class = WorkoutClass.new(instructor_id: params[:instructor_id])
       else @workout_class = WorkoutClass.new
       end
@@ -64,10 +63,8 @@ class WorkoutClassesController < ApplicationController
 
     # GET /workout_classes/1/drop
     def drop
-      # @student = Student.find_by(id: session[:student_id])
       @workout_class.update(student_id: nil)
       @workout_class.save
-      # @student.save
       redirect_to student_path(session[:student_id])
     end
   
