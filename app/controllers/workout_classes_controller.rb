@@ -16,25 +16,17 @@ class WorkoutClassesController < ApplicationController
   
     # GET /workout_classes/new
     def new
-      @workout_class = WorkoutClass.new
+      if params[:instructor_id]
+        # @instructor = Instructor.find(params[:instructor_id])
+        @workout_class = WorkoutClass.new(instructor_id: params[:instructor_id])
+      else @workout_class = WorkoutClass.new
+      end
+      render :layout => "admin"
     end
-  
+
     # GET /workout_classes/1/edit
     def edit
       render :layout => "admin"
-      # if params[:instructor_id]    
-      #   instructor = Instructor.find_by(id: params[:instructor_id])    
-      #     if instructor.nil?      
-      #       redirect_to instructors_path, alert: "Instructor not found."    
-      #     elsif      
-      #       @workout_class = instructor.workout_classes.find_by(id: params[:id])      
-      #       redirect_to instructor_workout_classes_path(instructor), alert: "Workout class not found." 
-      #         if @workout_class.nil?    
-      #         end  
-      #     else    
-      #       @workout_class = WorkoutClass.find(params[:id])  
-      #     end
-      #   end
     end
   
     # POST /workout_classes

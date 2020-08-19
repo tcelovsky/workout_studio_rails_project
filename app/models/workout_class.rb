@@ -2,6 +2,7 @@ class WorkoutClass < ApplicationRecord
     belongs_to :instructor
     # belongs_to :student
     has_and_belongs_to_many :students
+    # belongs_to :category
     
     scope :ordered, -> { order(date: :asc) }
 
